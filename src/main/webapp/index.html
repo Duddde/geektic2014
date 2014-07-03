@@ -5,7 +5,7 @@
         <title>Geektic</title>
 		<link href="/js/bootstrap-3.1.1-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
-    <body ng-controller="HelloCtrl">
+    <body ng-controller="GeekCtrl">
 	
 	
 	<div class="jumbotron">
@@ -39,7 +39,7 @@
           <img class="img-circle" src="/image/2.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Une Geekette</h2>
           <p><h4 class = "text-center">Centre d'interets</h4>	
-			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options={{interet.interet}}>
+			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet for interet in interets">
 			 	<option value="">Tous</option>
 			 </select>  
 		  </p>
@@ -59,7 +59,7 @@
 	</div>
 	</div>
 		
-        <h1>{{ hellomessage.message }}</h1>
+        <!-- <h1>{{ hellomessage.message }}</h1> -->
 
         <script src="/js/angular.js"></script>
         <script src="/js/angular-route.js"></script>

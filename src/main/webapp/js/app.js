@@ -1,9 +1,9 @@
-
+var app = angular.module('geektic',['ngRoute']);
 app.controller('GeekCtrl', function($scope, $http) {    
     
 	$scope.constructionCombo = function()
 	{
-		$http.get('/api/geek/combo').success(function(interets) {
+		$http.get('/api/geek/interets').success(function(interets) {
             $scope.interets = interets;
         });
 	}

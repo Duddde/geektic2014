@@ -12,7 +12,7 @@ import com.ninja_squad.geektic.Init.CentreInteret;
 import com.ninja_squad.geektic.Init.Geek;
 
 import javax.transaction.Transactional;
-
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
 @RestController
@@ -31,12 +31,12 @@ public class GeekService {
     */
 	
     @RequestMapping("/bysex/{sex}/{interet}")
-    public List<Geek>afficherGeeksParSexe(@PathVariable("sex") String s, @PathVariable("interet") String i) {  
-        return gDAO.getGeeksByCriteria(s, i);
+    public List<Geek>afficherGeeksParSexe(@PathVariable("sex") String sex, @PathVariable("interet") String interet) {  
+        return gDAO.getGeeksByCriteria(sex, interet);
     }  
     
-    @RequestMapping("/combo")
-    public List<CentreInteret>buildComboBox() {  
+    @RequestMapping("/interets")
+    public List<CentreInteret> buildComboBox() {  
         return gDAO.getAllInterets();
     }  
     
