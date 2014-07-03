@@ -3,9 +3,63 @@
 <html ng-app="geektic">
     <head>
         <title>Geektic</title>
+		<link href="/js/bootstrap-3.1.1-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body ng-controller="HelloCtrl">
-        <h1>{{ helloMessage.message }}</h1>
+	
+	
+	<div class="jumbotron">
+		<div class="container">
+	 	 	<h1 class = "text-center">GEEKTIC</h1>   
+	 	 	<p class = "text-center"><font color="#428bca">Trouver l'amour 4.0</font></p>
+		</div>
+	 </div>
+	 
+	 <div class="container">
+      <div class="page-header">
+        <h1>Je Cherche...</h1>
+      </div>
+	 </div>
+
+	<center>
+	<div class="container marketing">
+	<div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="/image/1.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Un Geek</h2>
+          <p><h4 class = "text-center">Centre d'interets</h4>	
+			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet for interet in interets">
+			 	<option value="">Tous</option>
+			 </select>  
+		  </p>
+          <p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+	
+		<div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Une Geekette</h2>
+          <p><h4 class = "text-center">Centre d'interets</h4>	
+			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet">
+			 	<option value="">Tous</option>
+			 </select>  
+		  </p>
+          <p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+		
+		<div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>On s'en fout</h2>
+          <p><h4 class = "text-center">Centre d'interets</h4>	
+			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet for interet in interets">
+			 	<option value="">Tous</option>
+			 </select>  
+		  </p>
+          <p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+	</div>
+	</div>
+		
+        <!-- <h1>{{ hellomessage.message }}</h1> -->
 
         <script src="/js/angular.js"></script>
         <script src="/js/angular-route.js"></script>
