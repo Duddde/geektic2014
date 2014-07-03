@@ -36,10 +36,10 @@
         </div><!-- /.col-lg-4 -->
 	
 		<div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <img class="img-circle" src="/image/2.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Une Geekette</h2>
           <p><h4 class = "text-center">Centre d'interets</h4>	
-			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet">
+			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options={{interet.interet}}>
 			 	<option value="">Tous</option>
 			 </select>  
 		  </p>
@@ -47,7 +47,7 @@
         </div><!-- /.col-lg-4 -->
 		
 		<div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <img class="img-circle" src="/image/3.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>On s'en fout</h2>
           <p><h4 class = "text-center">Centre d'interets</h4>	
 			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet for interet in interets">
@@ -59,7 +59,7 @@
 	</div>
 	</div>
 		
-        <!-- <h1>{{ hellomessage.message }}</h1> -->
+        <h1>{{ hellomessage.message }}</h1>
 
         <script src="/js/angular.js"></script>
         <script src="/js/angular-route.js"></script>
