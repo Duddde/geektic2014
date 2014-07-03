@@ -25,7 +25,7 @@ public class GeekDAO {
 	
 	public List<Geek> getGeeksByCriteria(String s, String i)
 	{	
-		TypedQuery<Geek> query = em.createQuery("SELECT g from Geek as g INNER JOIN g.centresInteret as i where g.sexe=:sexe and i.interet=:interet", Geek.class);
+		TypedQuery<Geek> query = em.createQuery("SELECT g from Geek as g INNER JOIN g.centresInteret as i where g.sexe=:sexe and i.name=:interet", Geek.class);
         query.setParameter("sexe", s).setParameter("interet", i);
         return query.getResultList();
 	}

@@ -11,5 +11,5 @@ public class CentreInteret {
 	public int idInteret;
 	
 	@Column(name="INTERET")
-	public String interet;
+	public String name;
 }

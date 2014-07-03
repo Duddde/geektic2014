@@ -1,4 +1,7 @@
 var app = angular.module('geektic',['ngRoute']);
+
+
+
 app.controller('GeekCtrl', function($scope, $http) {    
     
 	$scope.constructionCombo = function()
@@ -10,14 +13,12 @@ app.controller('GeekCtrl', function($scope, $http) {
 	
 	$scope.constructionCombo();
 	
-	$scope.recherche = function()
+	$scope.chercher = function($sexe,$interet)
     {
-		if ($scope.sexe == "" || $scope.sexe == null || $scope.interet == "" || $scope.interet == null )
-			{
-				alert("Vous devez sélectionner un genre et un centre d'interêt.");
-				return;
-			}
-    	$http.get('/api/geek/bysex/' + $scope.sexe + '/' + $scope.interet.interet).success(function(geeks) {
+		//alert($interet);
+		//alert($sexe);
+		
+    	$http.get('/api/geek/bysex/' + $sexe + '/' + $interet).success(function(geeks) {
             $scope.geeksbysex = geeks;
         });
     };    

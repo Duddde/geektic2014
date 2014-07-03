@@ -28,36 +28,52 @@
           <img class="img-circle" src="/image/1.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Un Geek</h2>
           <p><h4 class = "text-center">Centre d'interets</h4>	
-			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet for interet in interets">
+			 <select style="margin-top: 10px;" ng-model="interetHomme" placeholder="selection" ng-options="interet.name for interet in interets">
 			 	<option value="">Tous</option>
 			 </select>  
 		  </p>
-          <p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+          <p><a class="btn btn-default" ng-click="chercher('M',interetHomme.name)" role="button">Go &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
 	
 		<div class="col-lg-4">
           <img class="img-circle" src="/image/2.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Une Geekette</h2>
           <p><h4 class = "text-center">Centre d'interets</h4>	
-			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet for interet in interets">
+			 <select style="margin-top: 10px;" ng-model="interetFemme" placeholder="selction" ng-options="interet.name for interet in interets">
 			 	<option value="">Tous</option>
 			 </select>  
 		  </p>
-          <p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+          <p><a class="btn btn-default" ng-click="chercher('F',interetHomme.name)" role="button">Go &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
 		
 		<div class="col-lg-4">
           <img class="img-circle" src="/image/3.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>On s'en fout</h2>
           <p><h4 class = "text-center">Centre d'interets</h4>	
-			 <select style="margin-top: 10px;" ng-model="interet" placeholder="selction" ng-options="interet.interet for interet in interets">
+			 <select style="margin-top: 10px;" ng-model="interetAutres" placeholder="selction" ng-options="interet.name for interet in interets">
 			 	<option value="">Tous</option>
 			 </select>  
 		  </p>
-          <p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+          <p><a class="btn btn-default" ng-click="chercher('A',interetHomme.name)" role="button">Go &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
 	</div>
 	</div>
+		
+		
+		<div style="margin: 20px 50px; border: solid 1px black; float: left; background-color: #F2F2F2; border-radius: 10px;" >
+		     <div style="margin: auto; width: 400px;  border-radius: 10px; padding: 10px;" ng-repeat="geek in geeksbysex">		     		     
+			     <p class="text-info">{{ geek.prenom }} {{ geek.nom }}</p>	
+			     <p> Age: {{geek.age}} ans. </p>
+			     <p> mail: {{geek.mail}}</p>
+			     <p> Centres d'interêt: </p>	
+			     <ul>     		
+			     	<li ng-repeat="interet in geek.centresInteret">
+			     		{{ interet.interet }}
+			     	</li>	
+			     </ul>	   	   
+		     </div>
+		</div>
+		
 		
         <!-- <h1>{{ hellomessage.message }}</h1> -->
 
