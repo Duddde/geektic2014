@@ -21,6 +21,7 @@ public class GeekDAOTest extends BaseDaoTest {
     public void testGenreGetGeekByCriteria() {
        List<Geek> result = gDao.getGeeksByCriteria("M", "PHP");
        Assert.assertEquals(2, result.get(0).idGeek);
+       Assert.assertEquals(2,result.size());
     }
 	
 	@Test
@@ -37,7 +38,13 @@ public class GeekDAOTest extends BaseDaoTest {
 	       Assert.assertEquals(test , result.size());
 		
 	}
-	
+	@Test
+    public void testGetGeekByCriteriaTous() {
+		
+		List<Geek> result = gDao.getGeeksByCriteria("M", "Tous");
+	       Assert.assertEquals(3 , result.size());
+		
+	}
 	
 	
 	

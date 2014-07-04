@@ -43,7 +43,7 @@
 			 	<option value="">Tous</option>
 			 </select>  
 		  </p>
-          <p><a class="btn btn-default" ng-click="chercher('F',interetHomme.name)" role="button">Go &raquo;</a></p>
+          <p><a class="btn btn-default" ng-click="chercher('F',interetFemme.name)" role="button">Go &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
 		
 		<div class="col-lg-4">
@@ -54,7 +54,7 @@
 			 	<option value="">Tous</option>
 			 </select>  
 		  </p>
-          <p><a class="btn btn-default" ng-click="chercher('A',interetHomme.name)" role="button">Go &raquo;</a></p>
+          <p><a class="btn btn-default" ng-click="chercher('A',interetAutres.name)" role="button">Go &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
 	</div>
 	</div>
@@ -65,10 +65,10 @@
 			     <p class="text-info">{{ geek.prenom }} {{ geek.nom }}</p>	
 			     <p> Age: {{geek.age}} ans. </p>
 			     <p> mail: {{geek.mail}}</p>
-			     <p> Centres d'interêt: </p>	
+			     <p> Centres d'intert: </p>	
 			     <ul>     		
 			     	<li ng-repeat="interet in geek.centresInteret">
-			     		{{ interet.interet }}
+			     		{{ interet.name }}
 			     	</li>	
 			     </ul>	   	   
 		     </div>

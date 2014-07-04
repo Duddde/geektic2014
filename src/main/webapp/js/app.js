@@ -13,13 +13,21 @@ app.controller('GeekCtrl', function($scope, $http) {
 	
 	$scope.constructionCombo();
 	
-	$scope.chercher = function($sexe,$interet)
+	$scope.chercher = function(sexe,interet)
     {
 		//alert($interet);
 		//alert($sexe);
 		
-    	$http.get('/api/geek/bysex/' + $sexe + '/' + $interet).success(function(geeks) {
+	
+		if ($scope.interet == null )
+		{
+			interet = 'Tous';
+			
+		}
+		//alert(interet);
+		$http.get('/api/geek/geeks/' + sexe + '/' + interet).success(function(geeks) {
             $scope.geeksbysex = geeks;
+            
         });
     };    
 });
