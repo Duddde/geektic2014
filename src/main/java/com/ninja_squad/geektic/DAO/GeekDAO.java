@@ -25,7 +25,6 @@ public class GeekDAO {
 	public List<Geek> getGeeksByCriteria(String sex, String interet)
 	{	
 		
-		
 		if (interet.equals("Tous")){
 			TypedQuery<Geek> query = em.createQuery("SELECT distinct g from Geek as g LEFT JOIN FETCH g.centresInteret  where g.sexe=:sexe", Geek.class);
 	        query.setParameter("sexe", sex);

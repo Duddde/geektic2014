@@ -42,7 +42,7 @@ public class GeekDAOTest extends BaseDaoTest {
     public void testGetGeekByCriteriaTous() {
 		
 		List<Geek> result = gDao.getGeeksByCriteria("M", "Tous");
-	       Assert.assertEquals(3 , result.size());
+	       Assert.assertEquals( 3, result.size());
 		
 	}
 	
