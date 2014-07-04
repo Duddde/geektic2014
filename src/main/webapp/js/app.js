@@ -19,13 +19,13 @@ app.controller('GeekCtrl', function($scope, $http) {
 		//alert($sexe);
 		
 	
-		if ($scope.interet == null )
+		if (interet == null )
 		{
 			interet = 'Tous';
 			
 		}
-		//alert(interet);
-		$http.get('/api/geek/geeks/' + sexe + '/' + interet).success(function(geeks) {
+		
+		$http.get('/api/geek/bysex/' + sexe + '/' + interet).success(function(geeks) {
             $scope.geeksbysex = geeks;
             
         });

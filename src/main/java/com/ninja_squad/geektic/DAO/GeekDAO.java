@@ -17,21 +17,23 @@ public class GeekDAO {
 	
 	public List<Geek> getGeeks()
 	{
-        TypedQuery<Geek> query = em.createQuery("SELECT g from Geek as g", Geek.class);
+        TypedQuery<Geek> query = em.createQuery("SELECT distinct g from Geek as g LEFT JOIN FETCH g.centresInteret", Geek.class);
         return query.getResultList();
     }
 	
 	
-	public List<Geek> getGeeksByCriteria(String s, String i)
+	public List<Geek> getGeeksByCriteria(String sex, String interet)
 	{	
-		if (i.equals("Tous")){
-			TypedQuery<Geek> query = em.createQuery("SELECT distinct g from Geek as g LEFT JOIN FETCH g.centresInteret INNER JOIN g.centresInteret as i where g.sexe=:sexe", Geek.class);
-	        query.setParameter("sexe", s);
+		
+		
+		if (interet.equals("Tous")){
+			TypedQuery<Geek> query = em.createQuery("SELECT distinct g from Geek as g LEFT JOIN FETCH g.centresInteret  where g.sexe=:sexe", Geek.class);
+	        query.setParameter("sexe", sex);
 	        return query.getResultList();
 			
 		}else{
 			TypedQuery<Geek> query = em.createQuery("SELECT distinct g from Geek as g LEFT JOIN FETCH g.centresInteret INNER JOIN g.centresInteret as i where g.sexe=:sexe and i.name=:interet", Geek.class);
-	        query.setParameter("sexe", s).setParameter("interet", i);
+	        query.setParameter("sexe", sex).setParameter("interet", interet);
 	        return query.getResultList();
 		}
 		

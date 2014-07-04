@@ -32,7 +32,16 @@ public class GeekService {
 	
     @RequestMapping("/bysex/{sex}/{interet}")
     public List<Geek>afficherGeeksParSexe(@PathVariable("sex") String sex, @PathVariable("interet") String interet) {  
-        return gDAO.getGeeksByCriteria(sex, interet);
+       
+    	if (sex.equals("Autre") && interet.equals("Tous")){
+        	
+        	return gDAO.getGeeks();
+        }
+    	 
+        else{
+        	
+        	return gDAO.getGeeksByCriteria(sex, interet);
+        }
     }  
     
     @RequestMapping("/interets")
